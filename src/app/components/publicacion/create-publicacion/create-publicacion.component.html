@@ -1,0 +1,62 @@
+<div class="login-page">
+    <mat-card class="mat-elevation-z12">
+        <br>
+      <mat-card-title style="text-align:center;">Crear publicacion</mat-card-title>
+      <br>
+            <mat-card-content>
+              <form action="">
+                <mat-form-field>
+                  <input
+                    matInput
+                    placeholder="Titulo"
+                    required
+                    name="tituloo"
+                    [(ngModel)]="publicacion.titulo"
+                    #titulo="ngModel">
+                    <mat-error *ngIf="titulo.errors && titulo.errors.required">Titulo is required</mat-error>
+                  <mat-icon matSuffix>create</mat-icon>
+                </mat-form-field>
+                <!--<mat-form-field>
+                  <input
+                    matInput
+                    placeholder="Categoria"
+                    required
+                    name="tituloo"
+                    [(ngModel)]="publicacion.categoria"
+                    #categoria="ngModel">
+                    <mat-error *ngIf="categoria.errors && categoria.errors.required">Titulo is required</mat-error>
+                  <mat-icon matSuffix>create</mat-icon>
+                </mat-form-field>-->
+                <mat-form-field>
+                  <textarea
+                    matInput
+                    placeholder="Descripcion"
+                    type="password"
+                    required
+                    rows="5"
+                    minlength="6"
+                    name="password"
+                    [(ngModel)]="publicacion.descripcion"
+                    #password="ngModel"></textarea>
+                    <mat-error
+                      *ngIf="password.errors && password.errors.required">
+                      Descripcion is required
+                    </mat-error>
+                    <mat-error
+                      *ngIf="password.errors && password.errors.minlength">
+                      Password must be of length 6
+                    </mat-error>
+                  <mat-icon matSuffix>lock</mat-icon>
+                </mat-form-field>
+                
+                <button
+                  mat-raised-button
+                  color="primary"
+                  class="login-button" (click)='create()'>
+                  Publicar
+                </button>
+              </form>
+            </mat-card-content>
+        
+    </mat-card>
+  </div>

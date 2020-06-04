@@ -1,0 +1,164 @@
+
+
+      <mat-card-title style="text-align:center;">Ingresar</mat-card-title>
+      <mat-tab-group mat-stretch-tabs class="example-stretched-tabs">
+        <mat-tab label="Iniciar Sesion"><br><br>
+            <mat-card-content>
+              <form action="">
+                <mat-form-field>
+                  <input
+                    matInput
+                    placeholder="Usuario"
+                    required
+                    name="usuario"
+                    [(ngModel)]="usuariol.username"
+                    #usuario="ngModel">
+                    <mat-error *ngIf="usuario.errors && usuario.errors.required">Email is required</mat-error>
+                  <mat-icon matSuffix>person</mat-icon>
+                </mat-form-field>
+                <mat-form-field>
+                  <input
+                    matInput
+                    placeholder="Contraseña"
+                    type="password"
+                    required
+                    minlength="3"
+                    name="password"
+                    [(ngModel)]="usuariol.password"
+                    #password="ngModel">
+                    <mat-error
+                      *ngIf="password.errors && password.errors.required">
+                      Password is required
+                    </mat-error>
+                    <mat-error
+                      *ngIf="password.errors && password.errors.minlength">
+                      Password must be of length 3
+                    </mat-error>
+                  <mat-icon matSuffix>lock</mat-icon>
+                </mat-form-field>
+                <mat-checkbox>Recordarmelo</mat-checkbox>
+                <button
+                  mat-raised-button
+                  color="primary"
+                  class="login-button"
+                  (click)='login()'>
+                  Ingresar
+                </button>
+  
+                <button
+                  mat-raised-button
+                  class="login-button">
+                  Ingresar con Google
+                </button>
+              </form>
+            </mat-card-content>
+        </mat-tab>
+        <mat-tab label="Registrarse">
+          <mat-card-content>
+            <form action="" #registerForm="ngForm">
+              <mat-form-field>
+                <input
+                  matInput
+                  placeholder="User Name"
+                  required
+                  name="username"
+                  [(ngModel)]="usuariol.username"
+                  #username="ngModel">
+                <mat-icon matSuffix>perm_identity</mat-icon>
+                <mat-error
+                  *ngIf="username.invalid">
+                  Username is required
+                </mat-error>
+  
+              </mat-form-field>
+              <mat-form-field>
+                <input
+                  matInput
+                  placeholder="Nombre"
+                  required
+                  name="nombre"
+                  ngModel
+                  [(ngModel)]="usuariol.perfil.nombre"
+                  #nombre="ngModel">
+                  <mat-error *ngIf="nombre.invalid">Nombre is required</mat-error>
+                <mat-icon matSuffix>person</mat-icon>
+              </mat-form-field>
+              <mat-form-field>
+                <input
+                  matInput
+                  placeholder="Apellido"
+                  required
+                  name="apellido"
+                  [(ngModel)]="usuariol.perfil.apellido"
+                  #apellido="ngModel">
+                  <mat-error *ngIf="apellido.invalid">Apellido is required</mat-error>
+                <mat-icon matSuffix>person</mat-icon>
+              </mat-form-field>
+              <mat-form-field>
+                <input
+                  matInput
+                  placeholder="Correo electronico"
+                  required
+                  name="email"
+                  [(ngModel)]="usuariol.email"
+                  #email="ngModel">
+                  <mat-error *ngIf="email.invalid">Email is required</mat-error>
+                <mat-icon matSuffix>email</mat-icon>
+              </mat-form-field>
+              <!--<mat-form-field>
+                <mat-label>Select an option</mat-label>
+                <mat-select name="email"
+                [(ngModel)]="perfil.genero">
+                  <mat-option>None</mat-option>
+                  <mat-option value="option1">Masculino</mat-option>
+                  <mat-option value="option2">Femenino</mat-option>
+                </mat-select>
+              </mat-form-field>-->
+              <mat-form-field>
+                <input
+                  matInput
+                  placeholder="Contraseña"
+                  type="password"
+                  required
+                  minlength="6"
+                  name="password"
+                  [(ngModel)]="usuariol.password"
+                  #password="ngModel">
+                  <mat-error
+                    *ngIf="password.errors && password.errors.required">
+                    Password is required
+                  </mat-error>
+                  <mat-error
+                    *ngIf="password.errors && password.errors.minlength">
+                    Password must be of length 6
+                  </mat-error>
+                <mat-icon matSuffix>lock</mat-icon>
+  
+              </mat-form-field>
+              <mat-form-field>
+                  <input
+                  matInput
+                  placeholder="Confirmar contraseña"
+                  type="password"
+                  required
+                  minlength="6"
+                  name="repassword"
+                  ngModel
+                  #repassword="ngModel">
+                  <mat-error
+                    *ngIf="repassword.errors && repassword.errors.required ">
+                    Re-Enter Password is required
+                  </mat-error>
+                <mat-icon matSuffix>lock</mat-icon>
+              </mat-form-field>
+              <button
+                mat-raised-button
+                color="primary"
+                class="login-button" (click)='create()'>
+                Registrarse
+              </button>
+            </form>
+          </mat-card-content>
+        </mat-tab>
+      </mat-tab-group>
+

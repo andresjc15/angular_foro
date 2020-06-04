@@ -1,0 +1,26 @@
+
+<div class="centrar">
+  <mat-card  >
+<mat-card class="example-card" *ngFor="let publicacion of publicaciones">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>{{publicacion.perfil.nombre+ ' ' +publicacion.perfil.apellido}}</mat-card-title>
+      <mat-card-subtitle >{{publicacion.perfil.carrera.nombre}}</mat-card-subtitle>
+    </mat-card-header>
+    
+    <mat-card-content><h3><strong>{{publicacion.titulo}}</strong></h3>
+      <p class="autosalto">
+        
+        {{publicacion.descripcion}}
+      </p>
+      
+        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+      
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button><mat-icon>thumb_up</mat-icon></button>
+      <button mat-button>Comentar</button>
+    </mat-card-actions>
+  </mat-card><br>
+</mat-card>
+</div>
