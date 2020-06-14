@@ -1,10 +1,20 @@
-<mat-toolbar class="mat-elevation-z8">
+
+
+<mat-toolbar class="mat-elevation-z8 toolbarstyle">
+
+  <button mat-icon-button aria-label="Example icon button with a vertical three dot icon" (click)="drawer.toggle()">
+    <mat-icon>menu</mat-icon>
+  </button>
 
   <button mat-button routerLink="" routerLinkActive="active">
     <mat-icon>people</mat-icon>
     ForoApp
   </button>
-  <a mat-button [matMenuTriggerFor]="menu">
+  
+  
+  
+
+  <!--<a mat-button [matMenuTriggerFor]="menu">
     <mat-icon aria-hidden="false" aria-label="Example menu icon">menu</mat-icon>
     Categorias
   </a>
@@ -17,7 +27,7 @@
       <input matInput placeholder="Buscar:" name="buscar" ngModel #buscar="ngModel">
       <mat-icon matSuffix>search</mat-icon>
     </mat-form-field>
-  </form>
+  </form>-->
   <span class="example-spacer"></span>
 
   <button mat-button routerLink="crear-publicacion" routerLinkActive="active">
@@ -38,5 +48,16 @@
   </mat-menu>
 
 </mat-toolbar>
-
+<mat-drawer-container class="example-container" autosize>
 <router-outlet></router-outlet>
+
+
+  <mat-drawer #drawer class="example-sidenav" mode="side">
+    <mat-option>
+      
+      <h3><mat-icon>home</mat-icon>Principal</h3>
+    </mat-option>
+    
+  </mat-drawer>
+
+</mat-drawer-container>

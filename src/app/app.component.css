@@ -21,3 +21,30 @@
     background-image: url('https://scontent.flim12-1.fna.fbcdn.net/v/t1.0-9/cp0/281237_383475199952_8320064_n.jpg?_nc_cat=102&_nc_sid=e007fa&_nc_eui2=AeF77ngsRtwFqJuzmuZU9RCHYQbFHjFJnU9hBsUeMUmdT2-y8Pt4uR-8TViASp1Mmh1SdOFEzYM0mZq6qv7a4A0g&_nc_oc=AQn1bXOdVwN9zeCZ49XSRq_a3Ee3yMU8Y8WDsBOfzFnTROI7W4-EisKoK3npvdtFh3o&_nc_ht=scontent.flim12-1.fna&oh=4d1b099dcc52f82f8a19583044c76a30&oe=5EE3CCD1');
     background-size: cover;
   }
+
+  .toolbarstyle {
+    background-color: cyan;
+  }
+  
+
+
+  .section-left{
+    width: 300px;
+  }
+
+
+  
+  .example-sidenav-content {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .example-sidenav {
+    width: 220px;
+  }
+
+  .containerstyle {
+    padding-top: 100px;
+  }
